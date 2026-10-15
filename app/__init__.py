@@ -61,4 +61,11 @@ def create_app(flask_config_name=None, **kwargs):
     from . import modules
     modules.init_app(app)
 
+    from flask_admin import Admin
+    from .core_views import PeopleView
+    from .modules.users.models import User
+    from .extensions import db
+    admin = Admin(app, url='/records')
+    admin.add_view(PeopleView(User, db.session))
+
     return app
