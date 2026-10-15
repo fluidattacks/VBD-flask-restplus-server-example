@@ -26,3 +26,4 @@ arrow>=0.8.0,<0.9
 
 six
 enum34; python_version < '3.4'
+Flask-Admin==1.6.1
